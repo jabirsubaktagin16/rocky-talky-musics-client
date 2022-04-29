@@ -5,7 +5,7 @@ const Loading = () => {
   return (
     <div
       style={{ height: "400px" }}
-      className="w-100 d-flex justify-content-center align-items-center"
+      className="w-full flex justify-center items-center"
     >
       <HashLoader />
     </div>
