@@ -1,9 +1,38 @@
 import React from "react";
-
+import {
+  useSignInWithGithub,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
+import toast from "react-hot-toast";
+import { useLocation, useNavigate } from "react-router-dom";
+import auth from "./../../../firebase.init";
+import Loading from "./../../Shared/Loading/Loading";
 const SocialLogin = () => {
+  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+    useSignInWithGoogle(auth);
+
+  const [signInWithGithub, githubUser, githubLoading, githubError] =
+    useSignInWithGithub(auth);
+
+  let errorElement;
+
+  const navigate = useNavigate();
+
+  const location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
+
+  if (googleError || githubError)
+    errorElement = toast.error(googleError?.message || githubError?.message);
+
+  if (googleLoading || githubLoading) return <Loading />;
+
+  if (googleUser || githubUser) navigate(from, { replace: true });
+
   return (
     <div className="flex justify-center gap-2 mt-4">
       <button
+        onClick={() => signInWithGoogle()}
         type="button"
         data-mdb-ripple="true"
         data-mdb-ripple-color="light"
@@ -22,6 +51,7 @@ const SocialLogin = () => {
         </svg>
       </button>
       <button
+        onClick={() => signInWithGithub()}
         type="button"
         data-mdb-ripple="true"
         data-mdb-ripple-color="light"
@@ -39,6 +69,7 @@ const SocialLogin = () => {
           />
         </svg>
       </button>
+      {errorElement}
     </div>
   );
 };
