@@ -39,8 +39,6 @@ const SignUp = () => {
     }
   };
 
-  if (user) console.log("User", user);
-
   const navigateLogin = (event) => navigate("/login");
 
   if (loading || updating) return <Loading />;

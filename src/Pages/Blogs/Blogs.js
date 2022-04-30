@@ -10,7 +10,7 @@ const Blogs = () => {
         style={{
           backgroundImage:
             "url('https://i.ibb.co/hRgYzqS/hosein-zanbori-wvb-OWc-IDu-Yg-unsplash-1.jpg')",
-          height: "400px",
+          height: "500px",
         }}
       >
         <div
@@ -170,8 +170,8 @@ const Blogs = () => {
                       aria-expanded="false"
                       aria-controls="flush-collapseTwo"
                     >
-                      When should you use nodejs and when should you use
-                      mongodb?
+                      When should you use NodeJS and when should you use
+                      MongoDB?
                     </button>
                   </h2>
                   <div
@@ -181,7 +181,7 @@ const Blogs = () => {
                     data-bs-parent="#accordionFlushExample"
                   >
                     <div className="accordion-body py-4 px-5">
-                      <p>
+                      <p className="text-justify">
                         <span className="font-medium">When to use NodeJS:</span>{" "}
                         NodeJS is an open source, cross-platform runtime
                         environment for developing server-side and networking
@@ -197,7 +197,7 @@ const Blogs = () => {
                         Hardware Programming. On the other hand, it is not good
                         for CPU-Heavy Server-Side Computation and CRUD Apps.
                       </p>
-                      <p className="mt-2">
+                      <p className="text-justify mt-2">
                         <span className="font-medium">
                           When to use MongoDB:
                         </span>{" "}
@@ -363,13 +363,34 @@ const Blogs = () => {
                     data-bs-parent="#accordionFlushExample"
                   >
                     <div class="accordion-body py-4 px-5">
-                      Placeholder content for this accordion, which is intended
-                      to demonstrate the <code>.accordion-flush</code> class.
-                      This is the third item's accordion body. Nothing more
-                      exciting happening here in terms of content, but just
-                      filling up the space to make it look, at least at first
-                      glance, a bit more representative of how this would look
-                      in a real-world application.
+                      <p className="text-justify">
+                        <span className="font-medium">Purpose of JWT:</span>{" "}
+                        Instead of storing information on the server after
+                        authentication, JWT creates a JSON web token and
+                        encodes, sterilizes, and adds a signature with a secret
+                        key that cannot be tampered with. This key is then sent
+                        back to the browser. Each time a request is sent, it
+                        verifies and sends the response back.
+                        <br />
+                        JWT also allows us to use the same JSON Web Token in
+                        multiple servers that you can run without running into
+                        problems where one server has a certain session, and the
+                        other server doesn't.
+                      </p>
+                      <p className="text-justify mt-2">
+                        <span className="font-medium">How JWT Works:</span>{" "}
+                        First of all, a user logs in to an application with a
+                        username and password, or otherwise proves his/her
+                        identity. Then the server confirms her identity and
+                        sends back an access token containing a reference to
+                        his/her identity. After that, the client then includes
+                        this access token with every request to the server. For
+                        protected routes, REST API authentication middleware
+                        asserts the presence of a valid access token. The server
+                        can further use the identity asserted by the validated
+                        token to implement more granular permissions, such as
+                        acting on resources belonging to that particular user.
+                      </p>
                     </div>
                   </div>
                 </div>
