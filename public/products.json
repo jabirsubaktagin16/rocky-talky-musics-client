@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Epiphone DR100",
+    "price": 169,
+    "image": "https://i.ibb.co/tLxKVmy/epiphone-dr100.png",
+    "quantity": 15,
+    "category": "Accoustic Guitar",
+    "supplier_email": "ahmad.subaktagin@gmail.com",
+    "description": "It may be considered a cheap acoustic guitar, but we found it difficult to find much wrong with the DR-100 for those on a budget. The Epiphone DR-100 produces a tone that you wouldn't expect given the small price tag. Available in a variety of finishes, the build quality outmatches most of the competition in this price bracket.\n\nA select spruce top is accompanied by a mahogany body and neck, the latter of which features a slim taper profile for more comfortable playing, finished off with a rosewood fingerboard. \n\nIn use it's a relatively easy player, and the body has ample resonance. If you're on a very small budget, the Epiphone DR-100 is a no-brainer."
+  },
+  {
+    "name": "Fender American Performer Precision Bass",
+    "price": 1500,
+    "image": "https://i.ibb.co/C52GFZp/Fender-American-Performer-Precision-Bass.png",
+    "quantity": 12,
+    "category": "Bass Guitar",
+    "supplier_email": "ahmad.subaktagin@gmail.com",
+    "description": "A modern expression of the solidbody electric bass that started it all, Fender's American Performer Precision Bass delivers the latest in US-made quality and value. A comfortable, ultra-fast modern C-shaped maple neck and lightweight, contoured alder body make the American Performer Precision Bass addictively playable. And it's equipped with Fender's powerful, punchy Yosemite P/J pickups and their amazing Greasebucket tone circuit that lets you roll off the highs without sacrificing volume or low-end grunt. Finished in one of Fender's flashy new colors, the American Performer Precision Bass looks as good as it sounds."
+  },
+  {
+    "name": "Mapex Storm Series ST5295F Deep Black",
+    "price": 699,
+    "image": "https://i.ibb.co/FgGgfYQ/mapex-storm-series-st5295f-deep-black.png",
+    "quantity": 19,
+    "category": "Drums",
+    "supplier_email": "ahmad.subaktagin16@gmail.com",
+    "description": "Mapex Storm ST5295F Rock set is the best complete drum set perfect for the drum player needing a set with all of the hardware included. The all poplar Mapex Shells have the Mapex SONIClear™ bearing edge making tuning very simple and gives the drums plenty of tone. The 22″ bass drum delivers a punchy low end. All of the hardware is double braced."
+  },
+  {
+    "name": "Gemeinhardt 2SP Flute",
+    "price": 479,
+    "image": "https://i.ibb.co/m4PrfJF/Gemeinhardt-2-SP-Flute.png",
+    "quantity": 10,
+    "category": "Flute",
+    "supplier_email": "ahmad.subaktagin16@gmail.com",
+    "description": "Durably constructed for years of playability, the Gemeinhardt 2SP allows the beginning flutist to grow musically with every note he or she plays. Each Gemeinhardt 2SP student flute features a silver plated head, body and foot, plateau (closed hole) keys and a C foot. Complete with a strong plastic case and cleaning rod, the Gemeinhardt 2SP is the ideal flute for the student or beginning adult flutist.\n\nThis instrument is a legend in school band programs across the world. It satisfies the requirements of playability, sound quality and affordability that make a great student instrument. Very few other flutes rival it in these three categories. Tens of thousands of these flutes have found their way into the hands of students, many of whom have gone on to advanced playing."
+  },
+  {
+    "name": "Bach 180S37",
+    "price": 3149,
+    "image": "https://i.ibb.co/886JSxT/bach-180s37-stradivarius-series-bb-trumpet-s.png",
+    "quantity": 22,
+    "category": "Trumpet",
+    "supplier_email": "subaktagin.jabir16@gmail.com",
+    "description": "The Bach 180 series trumpets are the number one selling professional trumpets in the world. The 180S37 features a #37 one-piece hand-hammered professional bell that produces a warm sound with great projection allowing this instrument to work well in multiple musical settings—from jazz to concert or solo playing. The #25 leadpipe allows for slight resistance that is effective in centering tone production. The silver-plate finish provides a controlled brilliance to the overall sound. These features combined with a .459\" medium-large bore allow the player to produce a well-rounded sound well suited for all types of music."
+  },
+  {
+    "name": "Bunnel Pupil Violin",
+    "price": 250,
+    "image": "https://i.ibb.co/jGws3y2/bunnel-pupil-violins.png",
+    "quantity": 8,
+    "category": "Violin",
+    "supplier_email": "ahmad.subaktagin16@gmail.com",
+    "description": "The Bunnel Pupil Violin Outfit is the perfect beginner violin to set you on your musical journey. The quality of your first instrument greatly affects your initial playing and learning experience, especially for younger students. For the most positive and enjoyable experience, we make sure the Bunnel Pupil has comfortable playability and precise string height for new players. We guarantee that the sound quality and ease of playing of the Bunnel Pupil Violin will be far superior to any other beginner violin at this incredible value."
+  }
+]
