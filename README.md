@@ -21,6 +21,18 @@ It is an inventory Website for a musical instruments company that supplies diffe
 
 ### Main
 
-- Home page will has a header, banner, items and footer.
+- Home page has a header, banner, items and footer.
+- Six items in the inventory items section.
+- Clicking on the button takes the user to the inventory/:id route.
+- Question Answer
+- 404 Page Implemented
 
 ### Bonus
+
+- Email Verification Implemented. A link for Password reset added (used toast)
+- Meaningful readme.md file containing website name, a short description, link to live site. And at least five bullet points mentioning website's different features and functionality.
+- Responsive Website
+- Made the website meaningful and consistent in look and feel. Given the website a relevant name. Images and all the content of the website is relevant.
+- Clean and organized Code
+- Loading Spinner Added
+- Used Environment Variables

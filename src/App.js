@@ -4,6 +4,7 @@ import "./App.css";
 import Blogs from "./Pages/Blogs/Blogs";
 import Home from "./Pages/Home/Home/Home";
 import Inventory from "./Pages/Inventory/Inventory";
+import ManageInventory from "./Pages/ManageInventory/ManageInventory/ManageInventory";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Header from "./Pages/Shared/Header/Header";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
@@ -23,6 +24,14 @@ function App() {
           element={
             <RequireAuth>
               <Inventory />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/manageInventory"
+          element={
+            <RequireAuth>
+              <ManageInventory />
             </RequireAuth>
           }
         />
