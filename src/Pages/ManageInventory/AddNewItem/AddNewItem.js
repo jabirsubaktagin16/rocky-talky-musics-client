@@ -91,6 +91,7 @@ const AddNewItem = () => {
                   <option selected>Select Category</option>
                   <option value="Accoustic Guitar">Accoustic Guitar</option>
                   <option value="Bass Guitar">Bass Guitar</option>
+                  <option value="Drums">Drums</option>
                   <option value="Flute">Flute</option>
                   <option value="Microphone">Microphone</option>
                   <option value="Violin">Violin</option>
