@@ -6,6 +6,8 @@ const SingleItem = ({ product }) => {
   const { _id, name, image, price, quantity } = product;
   const navigate = useNavigate();
 
+  const inventoryNavigate = (id) => navigate(`/inventory/${id}`);
+
   const inventoryEdit = (id) => navigate(`/inventoryEdit/${id}`);
 
   return (
@@ -14,7 +16,12 @@ const SingleItem = ({ product }) => {
         <img className="md:w-4/6 w-full" src={image} alt="" />
       </div>
       <div className="box col-start-2 col-end-6">
-        <h5 className="text-gray-900 text-xl font-semibold mb-2">{name}</h5>
+        <button
+          onClick={() => inventoryNavigate(_id)}
+          className="text-gray-900 text-xl font-semibold mb-2"
+        >
+          {name}
+        </button>
         <p className="text-gray-700 text-base font-medium mb-4">${price}</p>
         {quantity === 0 && (
           <p className="text-gray-700 text-base mb-2 text-red-700">

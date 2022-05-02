@@ -1,5 +1,6 @@
 import React from "react";
 import { MdAddCircleOutline } from "react-icons/md";
+import { Link } from "react-router-dom";
 import useProducts from "./../../../hooks/useProducts";
 import SingleItem from "./../SingleItem/SingleItem";
 
@@ -32,13 +33,14 @@ const ManageInventory = () => {
       {/* Banner End */}
 
       <div className="grid mx-auto md:px-52 px-6 my-16 gap-8">
-        <button
+        <Link
+          to="/addItem"
           type="button"
           className="flex justify-center items-center bg-green-400 text-white hover:bg-green-500 p-2 text-base w-auto focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
         >
           <MdAddCircleOutline />
           <span className="ml-4">Add New Item</span>
-        </button>
+        </Link>
         {products.map((product) => (
           <SingleItem key={product._id} product={product} />
         ))}

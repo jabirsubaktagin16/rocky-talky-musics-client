@@ -125,7 +125,8 @@ const Header = () => {
                         aria-labelledby="dropdownMenuButton1d"
                       >
                         <li>
-                          <a
+                          <Link
+                            to="/addItem"
                             className="
               dropdown-item
               text-sm
@@ -139,10 +140,29 @@ const Header = () => {
               text-gray-700
               hover:bg-gray-100
             "
-                            href="#"
                           >
-                            Action
-                          </a>
+                            Add New Item
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            className="
+              dropdown-item
+              text-sm
+              py-2
+              px-4
+              font-normal
+              block
+              w-full
+              whitespace-nowrap
+              bg-transparent
+              text-gray-700
+              hover:bg-gray-100
+            "
+                            to="/manageInventory"
+                          >
+                            Manage Inventories
+                          </Link>
                         </li>
                         <li>
                           <a
@@ -161,27 +181,7 @@ const Header = () => {
             "
                             href="#"
                           >
-                            Another action
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="
-              dropdown-item
-              text-sm
-              py-2
-              px-4
-              font-normal
-              block
-              w-full
-              whitespace-nowrap
-              bg-transparent
-              text-gray-700
-              hover:bg-gray-100
-            "
-                            href="#"
-                          >
-                            Something else here
+                            My Items
                           </a>
                         </li>
                         <hr className="h-0 my-2 border border-solid border-t-0 border-gray-700 opacity-25" />
