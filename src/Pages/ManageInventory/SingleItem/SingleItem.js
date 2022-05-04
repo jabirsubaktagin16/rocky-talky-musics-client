@@ -1,24 +1,10 @@
 import React from "react";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import useProducts from "../../../hooks/useProducts";
 
-const SingleItem = ({ product }) => {
-  const [products, setProducts] = useProducts();
+const SingleItem = ({ product, handleDelete }) => {
   const { _id, name, image, price, quantity } = product;
   const navigate = useNavigate();
-
-  const handleDelete = (id) => {
-    const url = `http://localhost:5000/inventory/${id}`;
-    fetch(url, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        const remaining = products.filter((product) => product._id !== id);
-        setProducts(remaining);
-      });
-  };
 
   const inventoryNavigate = (id) => navigate(`/inventory/${id}`);
 
@@ -32,7 +18,7 @@ const SingleItem = ({ product }) => {
       <div className="box col-start-2 col-end-6">
         <button
           onClick={() => inventoryNavigate(_id)}
-          className="text-gray-900 text-xl font-semibold mb-2"
+          className="text-gray-900 text-xl text-left font-semibold mb-2"
         >
           {name}
         </button>
@@ -71,7 +57,7 @@ const SingleItem = ({ product }) => {
       <div
         className="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
         id="deleteModalCenter"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="deleteModalCenterTitle"
         aria-modal="true"
         role="dialog"

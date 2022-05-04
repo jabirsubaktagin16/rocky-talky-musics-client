@@ -8,7 +8,7 @@ const AddNewItem = () => {
   const [user, loading, error] = useAuthState(auth);
 
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = (data, event) => {
     const url = `http://localhost:5000/products`;
     fetch(url, {
       method: "POST",
@@ -20,6 +20,7 @@ const AddNewItem = () => {
       .then((res) => res.json())
       .then((result) => {
         toast.success("Item added Successfully");
+        event.target.reset();
       });
   };
 

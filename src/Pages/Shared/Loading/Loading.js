@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { HashLoader } from "react-spinners";
 
 const Loading = () => {
+  const [color, setColor] = useState("#480ca8");
   return (
     <div
       style={{ height: "400px" }}
       className="w-full flex justify-center items-center"
     >
-      <HashLoader />
+      <HashLoader color={color} size={150} />
     </div>
   );
 };

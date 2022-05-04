@@ -6,6 +6,19 @@ import SingleItem from "./../SingleItem/SingleItem";
 
 const ManageInventory = () => {
   const [products, setProducts] = useProducts();
+
+  const handleDelete = (id) => {
+    const url = `http://localhost:5000/inventory/${id}`;
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const remaining = products.filter((product) => product._id !== id);
+        setProducts(remaining);
+      });
+  };
+
   return (
     <>
       {/* Banner Start */}
@@ -42,7 +55,11 @@ const ManageInventory = () => {
           <span className="ml-4">Add New Item</span>
         </Link>
         {products.map((product) => (
-          <SingleItem key={product._id} product={product} />
+          <SingleItem
+            key={product._id}
+            product={product}
+            handleDelete={handleDelete}
+          />
         ))}
       </div>
     </>
