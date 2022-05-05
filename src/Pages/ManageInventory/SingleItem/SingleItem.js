@@ -2,7 +2,8 @@ import React from "react";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
-const SingleItem = ({ product, handleDelete }) => {
+const SingleItem = (props) => {
+  const { product, handleDelete } = props;
   const { _id, name, image, price, quantity } = product;
   const navigate = useNavigate();
 
@@ -24,9 +25,7 @@ const SingleItem = ({ product, handleDelete }) => {
         </button>
         <p className="text-gray-700 text-base font-medium mb-4">${price}</p>
         {quantity === 0 && (
-          <p className="text-gray-700 text-base mb-2 text-red-700">
-            Out of Stock
-          </p>
+          <p className="text-base mb-2 text-red-700">Out of Stock</p>
         )}
         {quantity === 1 && (
           <p className="text-gray-700 text-base mb-2">

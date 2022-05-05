@@ -56,8 +56,8 @@ const ManageInventory = () => {
         </Link>
         {products.map((product) => (
           <SingleItem
-            key={product._id}
             product={product}
+            key={product._id}
             handleDelete={handleDelete}
           />
         ))}
