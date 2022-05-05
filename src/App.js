@@ -6,6 +6,7 @@ import Home from "./Pages/Home/Home/Home";
 import Inventory from "./Pages/Inventory/Inventory";
 import AddNewItem from "./Pages/ManageInventory/AddNewItem/AddNewItem";
 import ManageInventory from "./Pages/ManageInventory/ManageInventory/ManageInventory";
+import MyItems from "./Pages/MyItems/MyItems";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Header from "./Pages/Shared/Header/Header";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
@@ -41,6 +42,14 @@ function App() {
           element={
             <RequireAuth>
               <AddNewItem />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="//myItems"
+          element={
+            <RequireAuth>
+              <MyItems />
             </RequireAuth>
           }
         />
