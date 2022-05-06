@@ -20,9 +20,7 @@ const Inventory = () => {
       quantity = product.quantity;
       sold = product.sold;
     }
-    category = product.category;
-    email = product.email;
-    description = product.description;
+    price = parseInt(price);
 
     const updatedProduct = {
       name,
@@ -36,7 +34,7 @@ const Inventory = () => {
     };
 
     // send data to the server
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = `https://protected-lowlands-38507.herokuapp.com/inventory/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -53,7 +51,7 @@ const Inventory = () => {
   const handleRestock = (event) => {
     event.preventDefault();
     quantity = parseInt(quantityRef.current.value) + parseInt(quantity);
-    console.log(quantity);
+    price = parseInt(price);
     const updatedProduct = {
       name,
       price,
@@ -65,7 +63,7 @@ const Inventory = () => {
       description,
     };
     // send data to the server
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = `https://protected-lowlands-38507.herokuapp.com/inventory/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

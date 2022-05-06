@@ -7,9 +7,12 @@ const useToken = (user) => {
     const getToken = async () => {
       const email = user?.user?.email;
       if (email) {
-        const { data } = await axios.post("http://localhost:5000/signin", {
-          email,
-        });
+        const { data } = await axios.post(
+          "https://protected-lowlands-38507.herokuapp.com/signin",
+          {
+            email,
+          }
+        );
         setToken(data.accessToken);
         localStorage.setItem("accessToken", data.accessToken);
       }

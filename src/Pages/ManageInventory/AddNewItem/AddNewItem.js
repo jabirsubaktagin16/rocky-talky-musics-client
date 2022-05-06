@@ -9,7 +9,7 @@ const AddNewItem = () => {
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {
-    const url = `http://localhost:5000/products`;
+    const url = `https://protected-lowlands-38507.herokuapp.com/products`;
     fetch(url, {
       method: "POST",
       headers: {

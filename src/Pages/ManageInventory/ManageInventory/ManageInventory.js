@@ -8,7 +8,7 @@ const ManageInventory = () => {
   const [products, setProducts] = useProducts();
 
   const handleDelete = (id) => {
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = `https://protected-lowlands-38507.herokuapp.com/${id}`;
     fetch(url, {
       method: "DELETE",
     })
