@@ -6,6 +6,7 @@ import {
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "./../../../firebase.init";
+import useToken from "./../../../hooks/useToken";
 import Loading from "./../../Shared/Loading/Loading";
 import SocialLogin from "./../SocialLogin/SocialLogin";
 
@@ -19,7 +20,7 @@ const SignUp = () => {
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-
+  const token = useToken(user);
   const navigate = useNavigate();
 
   const handleRegister = async (event) => {
@@ -33,7 +34,6 @@ const SignUp = () => {
       await createUserWithEmailAndPassword(email, password);
       await updateProfile({ displayName: name });
       toast("Updated Profile");
-      navigate("/");
     } else {
       toast.error("Password Doesn't Match");
     }
@@ -42,6 +42,8 @@ const SignUp = () => {
   const navigateLogin = (event) => navigate("/login");
 
   if (loading || updating) return <Loading />;
+
+  if (token) navigate("/");
 
   return (
     <section className="h-screen container mx-auto md:px-20 md:mb-20">

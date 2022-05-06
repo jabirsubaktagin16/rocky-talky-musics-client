@@ -7,6 +7,7 @@ import { toast } from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import auth from "./../../../firebase.init";
+import useToken from "./../../../hooks/useToken";
 import Loading from "./../../Shared/Loading/Loading";
 
 const SignIn = () => {
@@ -14,6 +15,7 @@ const SignIn = () => {
   const passwordRef = useRef("");
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [token] = useToken(user);
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
   const navigate = useNavigate();
@@ -23,18 +25,20 @@ const SignIn = () => {
 
   if (loading || sending) return <Loading />;
 
-  if (user) navigate(from, { replace: true });
+  if (token) {
+    navigate(from, { replace: true });
+  }
 
   if (error) {
     errorElement = toast.error(error?.message);
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
   };
 
   const navigateSignup = (event) => navigate("/signup");

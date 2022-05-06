@@ -1,21 +1,37 @@
 import axios from "axios";
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import auth from "./../../firebase.init";
 import Product from "./../Home/Product/Product";
 
 const MyItems = () => {
   const [user] = useAuthState(auth);
   const [myItems, setMyItems] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     const getMyItems = async () => {
       const email = user?.email;
       const url = `http://localhost:5000/inventory?email=${email}`;
-      const { data } = await axios.get(url);
-      setMyItems(data);
+      try {
+        const { data } = await axios.get(url, {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        });
+        setMyItems(data);
+      } catch (error) {
+        toast.error(error.message);
+        if (error.response.status === 401 || error.response.status === 403) {
+          signOut(auth);
+          navigate("/signin");
+        }
+      }
     };
     getMyItems();
-  }, []);
+  }, [user]);
   return (
     <>
       {/* Banner Start */}

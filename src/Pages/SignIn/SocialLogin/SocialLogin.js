@@ -6,6 +6,7 @@ import {
 import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "./../../../firebase.init";
+import useToken from "./../../../hooks/useToken";
 import Loading from "./../../Shared/Loading/Loading";
 const SocialLogin = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
@@ -13,6 +14,8 @@ const SocialLogin = () => {
 
   const [signInWithGithub, githubUser, githubLoading, githubError] =
     useSignInWithGithub(auth);
+
+  const [token] = useToken(googleUser || githubUser);
 
   let errorElement;
 
@@ -27,7 +30,7 @@ const SocialLogin = () => {
 
   if (googleLoading || githubLoading) return <Loading />;
 
-  if (googleUser || githubUser) navigate(from, { replace: true });
+  if (token) navigate(from, { replace: true });
 
   return (
     <div className="flex justify-center gap-2 mt-4">

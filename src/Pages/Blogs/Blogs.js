@@ -70,10 +70,10 @@ const Blogs = () => {
                     data-bs-parent="#accordionFlushExample"
                   >
                     <div className="accordion-body py-4 px-5">
-                      <div class="flex flex-col">
-                        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                          <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                            <div class="overflow-hidden">
+                      <div className="flex flex-col">
+                        <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                          <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                            <div className="overflow-hidden">
                               <table className="min-w-full">
                                 <thead className="border-b">
                                   <tr>
@@ -254,10 +254,10 @@ const Blogs = () => {
                     data-bs-parent="#accordionFlushExample"
                   >
                     <div className="accordion-body py-4 px-5">
-                      <div class="flex flex-col">
-                        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                          <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                            <div class="overflow-hidden">
+                      <div className="flex flex-col">
+                        <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                          <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                            <div className="overflow-hidden">
                               <table className="min-w-full">
                                 <thead className="border-b">
                                   <tr>
@@ -330,10 +330,10 @@ const Blogs = () => {
                   </div>
                 </div>
                 {/* Question#4 */}
-                <div class="accordion-item border-l-0 border-r-0 border-b-0 rounded-none bg-white border border-gray-200">
-                  <h2 class="accordion-header mb-0" id="flush-headingFour">
+                <div className="accordion-item border-l-0 border-r-0 border-b-0 rounded-none bg-white border border-gray-200">
+                  <h2 className="accordion-header mb-0" id="flush-headingFour">
                     <button
-                      class="accordion-button
+                      className="accordion-button
     collapsed
     relative
     flex
@@ -358,11 +358,11 @@ const Blogs = () => {
                   </h2>
                   <div
                     id="flush-collapseFour"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingFour"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body py-4 px-5">
+                    <div className="accordion-body py-4 px-5">
                       <p className="text-justify">
                         <span className="font-medium">Purpose of JWT:</span>{" "}
                         Instead of storing information on the server after
