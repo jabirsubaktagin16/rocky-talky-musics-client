@@ -30,7 +30,7 @@ const SignIn = () => {
   }
 
   if (error) {
-    errorElement = toast.error(error?.message);
+    toast.error(error?.message);
   }
 
   const handleSubmit = async (event) => {
@@ -85,7 +85,7 @@ const SignIn = () => {
                 value="Sign In"
               />
             </form>
-            {errorElement}
+            {/* {errorElement} */}
             <div className="text-right my-3">
               <button
                 onClick={() => resetPassword()}

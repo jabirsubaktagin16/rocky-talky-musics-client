@@ -17,8 +17,6 @@ const SocialLogin = () => {
 
   const [token] = useToken(googleUser || githubUser);
 
-  let errorElement;
-
   const navigate = useNavigate();
 
   const location = useLocation();
@@ -26,7 +24,7 @@ const SocialLogin = () => {
   let from = location.state?.from?.pathname || "/";
 
   if (googleError || githubError)
-    errorElement = toast.error(googleError?.message || githubError?.message);
+    toast.error(googleError?.message || githubError?.message);
 
   if (googleLoading || githubLoading) return <Loading />;
 
@@ -72,7 +70,6 @@ const SocialLogin = () => {
           />
         </svg>
       </button>
-      {errorElement}
     </div>
   );
 };
