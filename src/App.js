@@ -13,6 +13,8 @@ import NotFound from "./Pages/Shared/NotFound/NotFound";
 import RequireAuth from "./Pages/SignIn/RequireAuth/RequireAuth";
 import SignIn from "./Pages/SignIn/SignIn/SignIn";
 import SignUp from "./Pages/SignIn/SignUp/SignUp";
+import SupplierDetails from "./Pages/Suppliers/SupplierDetails/SupplierDetails";
+import Suppliers from "./Pages/Suppliers/Suppliers/Suppliers";
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/suppliers" element={<Suppliers />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/supplier/:id" element={<SupplierDetails />} />
         <Route
           path="/inventory/:id"
           element={
@@ -46,7 +50,7 @@ function App() {
           }
         />
         <Route
-          path="//myItems"
+          path="/myItems"
           element={
             <RequireAuth>
               <MyItems />

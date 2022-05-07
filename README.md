@@ -24,6 +24,7 @@ It is an inventory Website for a musical instruments company that supplies diffe
 - [x] ON the Manage Inventories page, there is button named `add new item`. Clicking that button we can add a new item using a form
 - [x] Email-Password and Social Login Implemented
 - [x] User sees more options like `Manage Items`, `Add Item`, `My items`, `Logout` when they login
+- [x] User sees his/her items in `My Items`
 - [x] No Fake Data
 - [x] Question Answer
 - [x] 404 Page Implemented
@@ -44,3 +45,5 @@ It is an inventory Website for a musical instruments company that supplies diffe
 - [x] Clean and organized Code
 - [x] Loading Spinner Added
 - [x] Used Environment Variables
+- [x] Used JWT
+- [x] `StackOverflow` Profile Created and Question Posted

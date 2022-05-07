@@ -39,6 +39,7 @@ const AddNewItem = () => {
                   className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   placeholder="Product Name"
                   {...register("name")}
+                  autoComplete="off"
                   required
                 />
               </div>
@@ -48,6 +49,7 @@ const AddNewItem = () => {
                   className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   placeholder="Price"
                   {...register("price")}
+                  autoComplete="off"
                   required
                 />
               </div>
@@ -57,6 +59,7 @@ const AddNewItem = () => {
                   className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   placeholder="Image URL"
                   {...register("image")}
+                  autoComplete="off"
                   required
                 />
               </div>
@@ -89,7 +92,7 @@ const AddNewItem = () => {
                   {...register("category")}
                   required
                 >
-                  <option selected>Select Category</option>
+                  <option defaultValue={""}>Select Category</option>
                   <option value="Accoustic Guitar">Accoustic Guitar</option>
                   <option value="Bass Guitar">Bass Guitar</option>
                   <option value="Drums">Drums</option>

@@ -8,15 +8,18 @@ const ManageInventory = () => {
   const [products, setProducts] = useProducts();
 
   const handleDelete = (id) => {
-    const url = `https://protected-lowlands-38507.herokuapp.com/${id}`;
-    fetch(url, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        const remaining = products.filter((product) => product._id !== id);
-        setProducts(remaining);
-      });
+    const proceed = window.confirm("Are You Sure?");
+    if (proceed) {
+      const url = `https://protected-lowlands-38507.herokuapp.com/inventory/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const remaining = products.filter((product) => product._id !== id);
+          setProducts(remaining);
+        });
+    }
   };
 
   return (
@@ -45,7 +48,7 @@ const ManageInventory = () => {
       </div>
       {/* Banner End */}
 
-      <div className="grid mx-auto md:px-52 px-6 my-16 gap-8">
+      <div className="grid mx-auto lg:px-52 px-6 my-16 gap-8">
         <Link
           to="/addItem"
           type="button"

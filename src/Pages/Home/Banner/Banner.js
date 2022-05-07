@@ -35,7 +35,11 @@ const Banner = () => {
       </div>
       <div className="carousel-inner relative w-full overflow-hidden">
         <div className="carousel-item active relative float-left w-full">
-          <img src={carousel_1} className="block w-full" alt="..." />
+          <img
+            src={carousel_1}
+            className="w-screen lg:h-full h-screen"
+            alt="..."
+          />
           <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50" />
           <div className="carousel-caption md:block absolute text-center">
             <h3 className="text-3xl font-bold">First slide label</h3>
@@ -43,7 +47,11 @@ const Banner = () => {
           </div>
         </div>
         <div className="carousel-item relative float-left w-full">
-          <img src={carousel_2} className="block w-full" alt="..." />
+          <img
+            src={carousel_2}
+            className="w-screen lg:h-full h-screen"
+            alt="..."
+          />
           <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50" />
           <div className="carousel-caption md:block absolute text-center">
             <h3 className="text-3xl font-bold">Second slide label</h3>
@@ -51,7 +59,11 @@ const Banner = () => {
           </div>
         </div>
         <div className="carousel-item relative float-left w-full">
-          <img src={carousel_3} className="block w-full" alt="..." />
+          <img
+            src={carousel_3}
+            className="w-screen lg:h-full h-screen"
+            alt="..."
+          />
           <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50" />
           <div className="carousel-caption md:block absolute text-center">
             <h3 className="text-3xl font-bold">Third slide label</h3>

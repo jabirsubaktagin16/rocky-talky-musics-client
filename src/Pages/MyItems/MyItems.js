@@ -23,7 +23,7 @@ const MyItems = () => {
         });
         setMyItems(data);
       } catch (error) {
-        toast.error(error.message);
+        toast.error(error?.message);
         if (error.response.status === 401 || error.response.status === 403) {
           signOut(auth);
           navigate("/signin");
