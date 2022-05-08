@@ -16,7 +16,7 @@ const Product = ({ product }) => {
         <img
           className="p-8 max-w-xs hover:scale-110 transition duration-300 ease-in-out"
           src={image}
-          alt="product image"
+          alt=""
         />
       </div>
       <div className="px-5 pb-5">

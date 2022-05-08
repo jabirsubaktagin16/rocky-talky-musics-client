@@ -27,7 +27,7 @@
     "category": "Drums",
     "sold": 6,
     "email": "ahmad.subaktagin16@gmail.com",
-    "description": "Mapex Storm ST5295F Rock set is the best complete drum set perfect for the drum player needing a set with all of the hardware included. The all poplar Mapex Shells have the Mapex SONIClear™ bearing edge making tuning very simple and gives the drums plenty of tone. The 22″ bass drum delivers a punchy low end. All of the hardware is double braced."
+    "description": "Mapex Storm ST5295F Rock set is the best complete drum set perfect for the drum player needing a set with all of the hardware included. The all poplar Mapex Shells have the Mapex SONIClear™ bearing edge making tuning very simple and gives the drums plenty of tone. The 22? bass drum delivers a punchy low end. All of the hardware is double braced."
   },
   {
     "name": "Gemeinhardt 2SP Flute",
@@ -58,5 +58,45 @@
     "sold": 5,
     "email": "ahmad.subaktagin16@gmail.com",
     "description": "The Bunnel Pupil Violin Outfit is the perfect beginner violin to set you on your musical journey. The quality of your first instrument greatly affects your initial playing and learning experience, especially for younger students. For the most positive and enjoyable experience, we make sure the Bunnel Pupil has comfortable playability and precise string height for new players. We guarantee that the sound quality and ease of playing of the Bunnel Pupil Violin will be far superior to any other beginner violin at this incredible value."
+  },
+  {
+    "name": "AKG D5 Vocal Dynamic Microphone",
+    "price": 105,
+    "image": "https://i.ibb.co/LRR83qS/akg-d5-dynamic-microphone-for-the-stage-300x90.png",
+    "quantity": 33,
+    "category": "Microphone",
+    "sold": 12,
+    "email": "subaktagin.jabir16@gmail.com",
+    "description": "The D5 professional dynamic vocal microphone for lead and backing vocals delivers a powerful sound even on the noisiest stage. Its frequency-independent supercardioid polar pattern ensures maximum gain before feedback. The D5 stands for a crisp sound that cuts through every mix. The dual shock mount eliminates any kind of mechanical noise for trouble-free live use. The audience will hear the pristine sound of your voice! The D5 S has the same mechanical, electrical, and acoustic characteristics as the D5 and features a noiseless on/off switch."
+  },
+  {
+    "name": "D Z Strad Violin",
+    "price": 205,
+    "image": "https://i.ibb.co/vj3M7qM/dz-strad-violins.png",
+    "quantity": 22,
+    "category": "Violin",
+    "sold": 10,
+    "email": "subaktagin.jabir16@gmail.com",
+    "description": "As a violinist, you need to understand who makes your instrument and what the quality of your violin is. Since the quality of your instrument could highly affect the quality of your performance, you want to ensure your violin vomes from a respected brand and one of the most trusted violin brands is D Z Strad.\n\nD Z Strad is one of the leading companies that sells stringed instruments. They offer an array of instruments – from classical to modern – which produce amazing sound and tone. Since there are many violin models of the said brand, it is essential that we go through the best models so that you could arrive at the most appropriate instrument for you. In this article, we will review the ten best D Z Strad violins on the market."
+  },
+  {
+    "name": "Fender FA 100",
+    "price": 122,
+    "image": "https://i.ibb.co/ss3HfWs/fender-fa100.png",
+    "quantity": 26,
+    "category": "Accoustic Guitar",
+    "sold": 15,
+    "email": "ahmad.subaktagin16@gmail.com",
+    "description": "This is one of the cheapest, reasonable quality, guitars that money can buy really, retailing at only around $120 (USD) so keep expectations low for this one. That said, it wasn?t terrible by any means – a testament to modern day guitar building techniques that allows ok guitars to be built for a very low cost.\n\nI had to play around with the tuning a little bit at first but it did settle in eventually and I didn't have to tune it for the last bit of my session with it.\n\nThe tone is pretty empty and flat, it's lacking any real character and projection – but it's not an unpleasant sound and the intonation was also sounding fine. You could definitely play this guitar and not want to rip your ears off – your just not going to be taken to heaven by its melodic beauty either!\n\nYou could tell it was a cheap guitar but for the price you get what you pay for and it's certainly playable."
+  },
+  {
+    "name": "Fender Mustang Bass Guitar",
+    "price": 850,
+    "image": "https://i.ibb.co/2FJCB4g/Fender-Mustang-bass-guitar.png",
+    "quantity": 23,
+    "category": "Bass Guitar",
+    "sold": 9,
+    "email": "subaktagin.jabir16@gmail.com",
+    "description": "Introduced in 1966 as a companion to Fender's shorter-scaled, two-pickup Fender Mustang guitars, the Mustang Bass was the last original bass designed by Leo Fender before his departure from the company in 1965. The Mustang Bass has a short 30\" scale and a single split pickup (similar to the Precision Bass), one volume and one tone control, with strings-through-body routing. Like the early Precision and Jazz basses, the Mustang Bass was fitted with string mutes (although most players removed these).\n\nThe standard finishes were red and white. Mustang Basses, like all Fender guitars, were finished in nitrocellulose lacquer up until 1968, thereafter in thick polyester finish. In 1969, both the Mustang guitar and bass were issued with 'Competition' finishes—i.e., red with three white stripes, a thick one between two thinner ones, Lake Placid Blue with lighter blue stripes, etc. and were later available in various plain finishes including black and sunburst. (The yellowing of the lacquer on some early models has also resulted in \"rare\" colours like Surf Green, in reality a yellowed Competition Blue)."
   }
 ]

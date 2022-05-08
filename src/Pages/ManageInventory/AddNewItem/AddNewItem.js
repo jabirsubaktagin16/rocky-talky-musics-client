@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import auth from "../../../firebase.init";
+import Loading from "./../../Shared/Loading/Loading";
 
 const AddNewItem = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -24,11 +25,13 @@ const AddNewItem = () => {
       });
   };
 
+  if (loading) return <Loading />;
+
   return (
-    <section className="h-screen container mx-auto md:px-20 md:mb-20">
+    <section className="container mx-auto md:px-20 md:mb-20">
       <div className="container h-full">
         <div className="flex justify-center items-center flex-wrap h-full text-gray-800 ">
-          <div className="w-full md:w-5/12 bg-white px-8 py-20">
+          <div className="w-full lg:w-5/12 bg-white px-8 py-20">
             <h1 className="text-4xl uppercase text-center font-bold">
               Add New Item
             </h1>
@@ -39,6 +42,16 @@ const AddNewItem = () => {
                   className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   placeholder="Product Name"
                   {...register("name")}
+                  autoComplete="off"
+                  required
+                />
+              </div>
+              <div className="mb-6">
+                <input
+                  type="text"
+                  className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                  placeholder="Brand"
+                  {...register("brand")}
                   autoComplete="off"
                   required
                 />
@@ -93,7 +106,7 @@ const AddNewItem = () => {
                   required
                 >
                   <option defaultValue={""}>Select Category</option>
-                  <option value="Accoustic Guitar">Accoustic Guitar</option>
+                  <option value="Acoustic Guitar">Acoustic Guitar</option>
                   <option value="Bass Guitar">Bass Guitar</option>
                   <option value="Drums">Drums</option>
                   <option value="Flute">Flute</option>

@@ -56,7 +56,7 @@ const SignIn = () => {
     <section className="h-screen container mx-auto md:px-20 ">
       <div className="container px-6 py-12 h-full">
         <div className="flex justify-center items-center flex-wrap h-full text-gray-800 ">
-          <div className="w-full md:w-5/12 bg-white px-8 py-20">
+          <div className="w-full lg:w-5/12 xl:w-5/12 bg-white px-8 py-20">
             <h1 className="text-4xl uppercase text-center font-bold">
               Sign in Form
             </h1>

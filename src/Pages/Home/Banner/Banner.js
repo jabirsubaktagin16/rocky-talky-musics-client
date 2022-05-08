@@ -1,7 +1,4 @@
 import React from "react";
-import carousel_1 from "../../../images/images/carousel_1.jpg";
-import carousel_2 from "../../../images/images/carousel_2.jpg";
-import carousel_3 from "../../../images/images/carousel_3.jpg";
 import "./Banner.css";
 
 const Banner = () => {
@@ -35,39 +32,109 @@ const Banner = () => {
       </div>
       <div className="carousel-inner relative w-full overflow-hidden">
         <div className="carousel-item active relative float-left w-full">
-          <img
-            src={carousel_1}
-            className="w-screen lg:h-full h-screen"
-            alt="..."
-          />
-          <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50" />
-          <div className="carousel-caption md:block absolute text-center">
-            <h3 className="text-3xl font-bold">First slide label</h3>
-            <p>Some representative placeholder content for the first slide.</p>
+          <div
+            className="p-12 text-center relative overflow-hidden bg-no-repeat bg-cover"
+            style={{
+              backgroundImage: "url('https://i.ibb.co/y4jnmZ1/carousel-1.jpg')",
+              height: "584px",
+            }}
+          >
+            <div
+              className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+              style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
+            >
+              <div className="flex justify-center items-center h-full">
+                <div className="text-white">
+                  <h1 className="font-semibold text-4xl mb-4 uppercase">
+                    Acoustic Guitar
+                  </h1>
+                  <div className="flex justify-center items-center">
+                    <p className="font-light text-lg w-2/3">
+                      An acoustic guitar is a musical instrument in the string
+                      family. When a string is plucked its vibration is
+                      transmitted from the bridge, resonating throughout the top
+                      of the guitar. It is also transmitted to the side and back
+                      of the instrument, resonating through the air in the body,
+                      and producing sound from the sound hole. The original,
+                      general term for this stringed instrument is guitar, and
+                      the retronym 'acoustic guitar' distinguishes it from an
+                      electric guitar, which relies on electronic amplification.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="carousel-item relative float-left w-full">
-          <img
-            src={carousel_2}
-            className="w-screen lg:h-full h-screen"
-            alt="..."
-          />
-          <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50" />
-          <div className="carousel-caption md:block absolute text-center">
-            <h3 className="text-3xl font-bold">Second slide label</h3>
-            <p>Some representative placeholder content for the second slide.</p>
+          <div
+            className="p-12 text-center relative overflow-hidden bg-no-repeat bg-cover"
+            style={{
+              backgroundImage: "url('https://i.ibb.co/KF493HL/carousel-2.jpg')",
+              height: "584px",
+            }}
+          >
+            <div
+              className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+              style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
+            >
+              <div className="flex justify-center items-center h-full">
+                <div className="text-white">
+                  <h1 className="font-semibold text-4xl mb-4 uppercase">
+                    Microphone
+                  </h1>
+                  <div className="flex justify-center items-center">
+                    <p className="font-light text-lg w-2/3">
+                      A microphone, colloquially called a mic or mike, is a
+                      transducer that converts sound into an electrical signal.
+                      Microphones are used in many applications such as
+                      telephones, hearing aids, public address systems for
+                      concert halls and public events, motion picture
+                      production, live and recorded audio engineering, sound
+                      recording, two-way radios, megaphones, and radio and
+                      television broadcasting. They are also used in computers
+                      for recording voice, speech recognition, VoIP, and for
+                      other purposes such as ultrasonic sensors or knock
+                      sensors.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="carousel-item relative float-left w-full">
-          <img
-            src={carousel_3}
-            className="w-screen lg:h-full h-screen"
-            alt="..."
-          />
-          <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50" />
-          <div className="carousel-caption md:block absolute text-center">
-            <h3 className="text-3xl font-bold">Third slide label</h3>
-            <p>Some representative placeholder content for the third slide.</p>
+          <div
+            className="p-12 text-center relative overflow-hidden bg-no-repeat bg-cover"
+            style={{
+              backgroundImage: "url('https://i.ibb.co/3WjG5jJ/carousel-3.jpg')",
+              height: "584px",
+            }}
+          >
+            <div
+              className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+              style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
+            >
+              <div className="flex justify-center items-center h-full">
+                <div className="text-white">
+                  <h1 className="font-semibold text-4xl mb-4 uppercase">
+                    Bass Guitar
+                  </h1>
+                  <div className="flex justify-center items-center">
+                    <p className="font-light text-lg w-2/3">
+                      The bass guitar, electric bass or simply bass, is the
+                      lowest-pitched member of the guitar family. It is a
+                      plucked string instrument similar in appearance and
+                      construction to an electric or an acoustic guitar, but
+                      with a longer neck and scale length, and typically four to
+                      six strings or courses. Since the mid-1950s, the bass
+                      guitar has largely replaced the double bass in popular
+                      music.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

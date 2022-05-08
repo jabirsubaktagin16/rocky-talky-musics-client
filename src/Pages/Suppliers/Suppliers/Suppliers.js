@@ -29,7 +29,7 @@ const Suppliers = () => {
         </div>
       </div>
       {/* Banner End */}
-      <div className="container my-16 mx-auto lg:px-32 px-10 grid md:grid-cols-3 gap-6 text-center">
+      <div className="container my-16 mx-auto lg:px-32 px-10 grid lg:grid-cols-3 xl:grid-cols-3 gap-6 text-center">
         {suppliers.map((supplier) => (
           <Supplier supplier={supplier} key={supplier._id} />
         ))}

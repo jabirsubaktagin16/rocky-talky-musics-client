@@ -353,7 +353,7 @@ const Blogs = () => {
                       aria-expanded="false"
                       aria-controls="flush-collapseFour"
                     >
-                      What is the purpose of jwt and how does it work?
+                      What is the purpose of JWT and how does it work?
                     </button>
                   </h2>
                   <div

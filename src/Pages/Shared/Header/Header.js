@@ -1,18 +1,27 @@
 import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../images/logos/logo.png";
+import CustomLink from "../CustomLink/CustomLink";
 import auth from "./../../../firebase.init";
+import Loading from "./../Loading/Loading";
+import "./Header.css";
 
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
+
+  const navigate = useNavigate();
+
+  const signInNavigate = () => navigate("/signin");
+
+  if (loading) return <Loading />;
 
   const handleSignOut = () => signOut(auth);
 
   return (
     <nav
-      className="relative w-full flex flex-wrap items-center justify-between py-4 text-gray-500 hover:text-gray-700 focus:text-gray-700 navbar navbar-expand-lg navbar-light
+      className="relative w-full flex flex-wrap items-center uppercase justify-between py-4 text-gray-500 hover:text-gray-700 focus:text-gray-700 navbar navbar-expand-lg navbar-light
 "
     >
       <div className="md:container mx-auto w-full flex flex-wrap items-center justify-between md:px-20 px-6">
@@ -59,29 +68,23 @@ const Header = () => {
         >
           <ul className="navbar-nav flex flex-col pl-0 items-center list-style-none ml-auto">
             <li className="nav-item px-2">
-              <Link to="/" className="nav-link" aria-current="page">
+              <CustomLink to="/" className="nav-link" aria-current="page">
                 Home
-              </Link>
+              </CustomLink>
             </li>
 
             <li className="nav-item pr-2">
-              <Link
-                className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-                to="/suppliers"
-              >
+              <CustomLink className="nav-link p-0" to="/suppliers">
                 Suppliers
-              </Link>
+              </CustomLink>
             </li>
             <li className="nav-item pr-2">
-              <Link
-                className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-                to="/blogs"
-              >
+              <CustomLink className="nav-link p-0" to="/blogs">
                 Blogs
-              </Link>
+              </CustomLink>
             </li>
             {user ? (
-              <li className="nav-item md:ml-4 mt-0">
+              <li className="nav-item md:ml-2 mt-0">
                 <div className="flex justify-center">
                   <div>
                     <div className="dropdown relative">
@@ -221,12 +224,12 @@ const Header = () => {
             ) : (
               <li className="nav-item md:ml-4 md:mt-0 mt-4">
                 <div className="flex space-x-2 justify-center">
-                  <Link
-                    to="/signin"
-                    className="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
+                  <button
+                    onClick={signInNavigate}
+                    className="signIn inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
                   >
                     Sign In
-                  </Link>
+                  </button>
                 </div>
               </li>
             )}

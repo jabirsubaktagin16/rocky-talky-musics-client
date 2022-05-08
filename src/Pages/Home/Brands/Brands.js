@@ -12,7 +12,7 @@ const Brands = () => {
       <p className="text-2xl text-center">
         Following Renowned Companies are providing their best products to us
       </p>
-      <div className="container mx-auto md:px-20 px-10 grid overflow-hidden md:grid-cols-6 grid-cols-3 grid-rows-none gap-8 mt-8">
+      <div className="container mx-auto md:px-20 px-10 grid overflow-hidden lg:grid-cols-6 xl:grid-cols-6 grid-cols-3 grid-rows-none gap-8 mt-8">
         <div>
           <img src={akg} alt="" className="w-3/4" />
         </div>

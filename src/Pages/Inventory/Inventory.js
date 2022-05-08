@@ -8,8 +8,17 @@ const Inventory = () => {
   const [product, setProduct] = useProductDetail(id);
   const quantityRef = useRef(0);
 
-  let { name, price, image, quantity, sold, category, email, description } =
-    product;
+  let {
+    name,
+    brand,
+    price,
+    image,
+    quantity,
+    sold,
+    category,
+    email,
+    description,
+  } = product;
 
   const handleDelivery = () => {
     if (quantity > 0) {
@@ -27,6 +36,7 @@ const Inventory = () => {
 
     const updatedProduct = {
       name,
+      brand,
       price,
       image,
       quantity,
@@ -57,6 +67,7 @@ const Inventory = () => {
     price = parseInt(price);
     const updatedProduct = {
       name,
+      brand,
       price,
       image,
       quantity,
@@ -115,6 +126,9 @@ const Inventory = () => {
             <div className="my-4 text-center">
               <p className="font-normal">Category</p>
               <h6 className="text-xl font-medium">{product.category}</h6>
+              <br />
+              <p className="font-normal">Brand</p>
+              <h6 className="text-xl font-medium">{product.brand}</h6>
               <br />
               <p className="font-normal">Supplier Email</p>
               <h6 className="text-xl font-medium">{product.email}</h6>
