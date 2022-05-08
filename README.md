@@ -1,6 +1,6 @@
 # Rocky Talky Musics
 
-[Live Website Link](https://www.example.com)
+[Live Website Link](https://rocky-talky-musics.web.app/)
 
 ## Used Tools
 
