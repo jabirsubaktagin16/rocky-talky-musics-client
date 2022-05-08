@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../images/logos/logo.png";
 import CustomLink from "../CustomLink/CustomLink";
 import auth from "./../../../firebase.init";
-import Loading from "./../Loading/Loading";
 import "./Header.css";
 
 const Header = () => {
@@ -14,8 +13,6 @@ const Header = () => {
   const navigate = useNavigate();
 
   const signInNavigate = () => navigate("/signin");
-
-  if (loading) return <Loading />;
 
   const handleSignOut = () => signOut(auth);
 
