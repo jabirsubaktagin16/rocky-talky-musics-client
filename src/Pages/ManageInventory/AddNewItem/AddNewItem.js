@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import auth from "../../../firebase.init";
 import Loading from "./../../Shared/Loading/Loading";
+import PageTitle from "./../../Shared/PageTitle/PageTitle";
 
 const AddNewItem = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -29,6 +30,7 @@ const AddNewItem = () => {
 
   return (
     <section className="container mx-auto md:px-20 md:mb-20">
+      <PageTitle title={"Add New Item"} />
       <div className="container h-full">
         <div className="flex justify-center items-center flex-wrap h-full text-gray-800 ">
           <div className="w-full lg:w-5/12 bg-white px-8 py-20">

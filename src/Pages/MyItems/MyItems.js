@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { MdAddCircleOutline } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
+import PageTitle from "../Shared/PageTitle/PageTitle";
 import auth from "./../../firebase.init";
 import Product from "./../Home/Product/Product";
 
@@ -35,6 +36,7 @@ const MyItems = () => {
   }, [user]);
   return (
     <>
+      <PageTitle title={"My Items"} />
       {/* Banner Start */}
       <div
         className="p-12 text-center relative overflow-hidden bg-no-repeat bg-cover"

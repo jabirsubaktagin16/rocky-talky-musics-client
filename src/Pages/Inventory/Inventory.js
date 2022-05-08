@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { toast } from "react-hot-toast";
 import { Link, useParams } from "react-router-dom";
+import PageTitle from "../Shared/PageTitle/PageTitle";
 import useProductDetail from "./../../hooks/useProductDetail";
 
 const Inventory = () => {
@@ -95,6 +96,7 @@ const Inventory = () => {
 
   return (
     <div className="my-16">
+      <PageTitle title={`${product.name}`} />
       <div className="container items-center mx-auto md:px-20 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
         <div>
           <div className="bg-gray-200 rounded px-4">

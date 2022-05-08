@@ -1,4 +1,5 @@
 import React from "react";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 import Supplier from "../Supplier/Supplier";
 import useSuppliers from "./../../../hooks/useSuppliers";
 
@@ -6,6 +7,7 @@ const Suppliers = () => {
   const [suppliers, setSuppliers] = useSuppliers();
   return (
     <>
+      <PageTitle title={""} />
       {/* Banner Start */}
       <div
         className="p-12 text-center relative overflow-hidden bg-no-repeat bg-cover"

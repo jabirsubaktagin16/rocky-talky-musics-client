@@ -1,6 +1,7 @@
 import React from "react";
 import { MdAddCircleOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 import useProducts from "./../../../hooks/useProducts";
 import SingleItem from "./../SingleItem/SingleItem";
 
@@ -24,6 +25,7 @@ const ManageInventory = () => {
 
   return (
     <>
+      <PageTitle title={"Manage Inventories"} />
       {/* Banner Start */}
       <div
         className="p-12 text-center relative overflow-hidden bg-no-repeat bg-cover"

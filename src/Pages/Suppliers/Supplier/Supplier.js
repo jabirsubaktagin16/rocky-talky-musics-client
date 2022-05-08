@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 
 const Supplier = ({ supplier }) => {
   const { _id, name, thumbnailImage, logoImage, description } = supplier;
@@ -8,6 +9,7 @@ const Supplier = ({ supplier }) => {
   const supplierNavigate = (id) => navigate(`/supplier/${id}`);
   return (
     <div>
+      <PageTitle title={""} />
       <div className="block rounded-lg shadow-lg bg-white">
         <div
           className="overflow-hidden rounded-t-lg h-28"

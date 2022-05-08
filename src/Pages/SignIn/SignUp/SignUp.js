@@ -5,6 +5,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 import auth from "./../../../firebase.init";
 import useToken from "./../../../hooks/useToken";
 import Loading from "./../../Shared/Loading/Loading";
@@ -47,6 +48,7 @@ const SignUp = () => {
 
   return (
     <section className="h-screen container mx-auto md:px-20 md:mb-20">
+      <PageTitle title={"Sign Up"} />
       <div className="container h-full">
         <div className="flex justify-center items-center flex-wrap h-full text-gray-800 ">
           <div className="w-full md:w-5/12 bg-white px-8 py-20">
@@ -96,7 +98,7 @@ const SignUp = () => {
             <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
               <p className="text-center font-semibold mx-4 mb-0">OR</p>
             </div>
-            <p>Sign Up Using</p>
+            <p className="text-center">Sign Up Using</p>
             <SocialLogin />
             <div className="flex justify-center mt-2">
               <p>
