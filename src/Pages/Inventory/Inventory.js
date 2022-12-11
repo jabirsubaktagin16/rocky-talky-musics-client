@@ -48,7 +48,7 @@ const Inventory = () => {
     };
 
     // send data to the server
-    const url = `https://protected-lowlands-38507.herokuapp.com/inventory/${id}`;
+    const url = `https://rocky-talky-musics-server.onrender.com/inventory/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -78,7 +78,7 @@ const Inventory = () => {
       description,
     };
     // send data to the server
-    const url = `https://protected-lowlands-38507.herokuapp.com/inventory/${id}`;
+    const url = `https://rocky-talky-musics-server.onrender.com/inventory/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

@@ -16,7 +16,7 @@ const MyItems = () => {
   useEffect(() => {
     const getMyItems = async () => {
       const email = user?.email;
-      const url = `https://protected-lowlands-38507.herokuapp.com/inventory?email=${email}`;
+      const url = `https://rocky-talky-musics-server.onrender.com/inventory?email=${email}`;
       try {
         const { data } = await axios.get(url, {
           headers: {

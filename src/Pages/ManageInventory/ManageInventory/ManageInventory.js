@@ -11,7 +11,7 @@ const ManageInventory = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are You Sure?");
     if (proceed) {
-      const url = `https://protected-lowlands-38507.herokuapp.com/inventory/${id}`;
+      const url = `https://rocky-talky-musics-server.onrender.com/inventory/${id}`;
       fetch(url, {
         method: "DELETE",
       })

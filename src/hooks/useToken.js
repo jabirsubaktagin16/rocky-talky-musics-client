@@ -8,7 +8,7 @@ const useToken = (user) => {
       const email = user?.user?.email;
       if (email) {
         const { data } = await axios.post(
-          "https://protected-lowlands-38507.herokuapp.com/signin",
+          "https://rocky-talky-musics-server.onrender.com/signin",
           {
             email,
           }

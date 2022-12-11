@@ -11,7 +11,7 @@ const AddNewItem = () => {
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {
-    const url = `https://protected-lowlands-38507.herokuapp.com/products`;
+    const url = `https://rocky-talky-musics-server.onrender.com/products`;
     fetch(url, {
       method: "POST",
       headers: {
