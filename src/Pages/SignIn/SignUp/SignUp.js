@@ -5,7 +5,7 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { toast } from "react-hot-toast";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
 import auth from "./../../../firebase.init";
 import useToken from "./../../../hooks/useToken";
@@ -50,7 +50,7 @@ const SignUp = () => {
   if (token) navigate("/");
 
   if (signedInUser) {
-    return <Navigate to="/" state={{ from: location }} replace />;
+    return <Navigate to="/" />;
   }
 
   return (
