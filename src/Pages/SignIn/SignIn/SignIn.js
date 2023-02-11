@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
 import {
+  useAuthState,
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { toast } from "react-hot-toast";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import auth from "./../../../firebase.init";
@@ -12,6 +13,7 @@ import useToken from "./../../../hooks/useToken";
 import Loading from "./../../Shared/Loading/Loading";
 
 const SignIn = () => {
+  const [signedInUser, userLoading, userError] = useAuthState(auth);
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -23,7 +25,7 @@ const SignIn = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  if (loading || sending) return <Loading />;
+  if (loading || sending||userLoading) return <Loading />;
 
   if (token) {
     navigate(from, { replace: true });
@@ -52,6 +54,10 @@ const SignIn = () => {
       toast("Please Enter Your Email Address");
     }
   };
+
+  if (signedInUser) {
+    return <Navigate to="/" state={{ from: location }} replace />;
+  }
 
   return (
     <section className="h-screen container mx-auto md:px-20 ">

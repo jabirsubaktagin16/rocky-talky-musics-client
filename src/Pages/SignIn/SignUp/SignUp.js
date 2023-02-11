@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import {
+  useAuthState,
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
@@ -16,6 +17,8 @@ const SignUp = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const confirmPasswordRef = useRef("");
+
+  const [signedInUser, userLoading, userError] = useAuthState(auth);
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
@@ -42,9 +45,13 @@ const SignUp = () => {
 
   const navigateLogin = (event) => navigate("/login");
 
-  if (loading || updating) return <Loading />;
+  if (loading || updating||userLoading) return <Loading />;
 
   if (token) navigate("/");
+
+  if (signedInUser) {
+    return <Navigate to="/" state={{ from: location }} replace />;
+  }
 
   return (
     <section className="h-screen container mx-auto md:px-20 md:mb-20">

@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-import { BarLoader } from "react-spinners";
+import Lottie from "lottie-react";
+import React from "react";
+import musical from '../../../musical.json';
 
 const Loading = () => {
-  const [color, setColor] = useState("#480ca8");
+  const style = {
+    height: 500,
+  };
   return (
     <div className="w-full flex justify-center items-center my-20">
-      <BarLoader color={color} size={200} />
+      <Lottie style={style} animationData={musical} loop={true} />
     </div>
   );
 };
