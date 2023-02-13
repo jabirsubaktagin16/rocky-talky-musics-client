@@ -1,5 +1,6 @@
 import React from "react";
 import { MdDelete, MdEdit } from "react-icons/md";
+import Skeleton from "react-loading-skeleton";
 import { useNavigate } from "react-router-dom";
 
 const SingleItem = (props) => {
@@ -18,7 +19,7 @@ const SingleItem = (props) => {
         <h3 className="text-gray-900 text-3xl text-left font-semibold mb-2">
           {name}
         </h3>
-        <p className="text-gray-700 text-base font-medium mb-4">${price}</p>
+        <p className="text-gray-700 text-base font-medium mb-4">${price||<Skeleton/>}</p>
         {quantity === 0 && (
           <p className="text-base mb-2 text-red-700">Out of Stock</p>
         )}

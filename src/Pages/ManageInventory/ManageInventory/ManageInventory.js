@@ -1,12 +1,13 @@
 import React from "react";
 import { MdAddCircleOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Loading from "../../Shared/Loading/Loading";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
 import useProducts from "./../../../hooks/useProducts";
 import SingleItem from "./../SingleItem/SingleItem";
 
 const ManageInventory = () => {
-  const [products, setProducts] = useProducts();
+  const [products, setProducts, isLoading] = useProducts();
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are You Sure?");
@@ -22,6 +23,8 @@ const ManageInventory = () => {
         });
     }
   };
+
+  if (isLoading) return <Loading />;
 
   return (
     <>

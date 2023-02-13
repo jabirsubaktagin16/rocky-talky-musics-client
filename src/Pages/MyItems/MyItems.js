@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { MdAddCircleOutline } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
+import Loading from "../Shared/Loading/Loading";
 import PageTitle from "../Shared/PageTitle/PageTitle";
 import auth from "./../../firebase.init";
 import Product from "./../Home/Product/Product";
@@ -12,6 +13,7 @@ import Product from "./../Home/Product/Product";
 const MyItems = () => {
   const [user] = useAuthState(auth);
   const [myItems, setMyItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
   useEffect(() => {
     const getMyItems = async () => {
@@ -24,6 +26,7 @@ const MyItems = () => {
           },
         });
         setMyItems(data);
+        setIsLoading(false);
       } catch (error) {
         toast.error(error?.message);
         if (error.response.status === 401 || error.response.status === 403) {
@@ -34,6 +37,9 @@ const MyItems = () => {
     };
     getMyItems();
   }, [user]);
+
+  if (isLoading) return <Loading />;
+
   return (
     <>
       <PageTitle title={"My Items"} />

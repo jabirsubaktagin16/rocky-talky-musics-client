@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   useAuthState,
   useCreateUserWithEmailAndPassword,
@@ -19,6 +19,12 @@ const SignUp = () => {
   const confirmPasswordRef = useRef("");
 
   const [signedInUser, userLoading, userError] = useAuthState(auth);
+  const [isSignedIn, setIsSignedIn] = useState(false);
+
+  useEffect(() => {
+    if (signedInUser) setIsSignedIn(true);
+    else setIsSignedIn(false);
+  }, signedInUser);
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
@@ -45,13 +51,11 @@ const SignUp = () => {
 
   const navigateLogin = (event) => navigate("/login");
 
-  if (loading || updating||userLoading) return <Loading />;
+  if (loading || updating || userLoading) return <Loading />;
 
   if (token) navigate("/");
 
-  if (signedInUser) {
-    return <Navigate to="/" />;
-  }
+  if (isSignedIn) return <Navigate to="/" />;
 
   return (
     <section className="h-screen container mx-auto md:px-20 md:mb-20">

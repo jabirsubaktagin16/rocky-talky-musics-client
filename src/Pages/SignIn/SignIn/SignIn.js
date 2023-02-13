@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   useAuthState,
   useSendPasswordResetEmail,
@@ -13,26 +13,42 @@ import useToken from "./../../../hooks/useToken";
 import Loading from "./../../Shared/Loading/Loading";
 
 const SignIn = () => {
-  const [signedInUser, userLoading, userError] = useAuthState(auth);
+  const [user, loading, error] = useAuthState(auth);
+  const [isSignedIn, setIsSignedIn] = useState(false);
+
   const emailRef = useRef("");
   const passwordRef = useRef("");
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
-  const [token] = useToken(user);
+  const [
+    signInWithEmailAndPassword,
+    signInWithEmailAndPasswordUser,
+    signInWithEmailAndPasswordLoading,
+    signInWithEmailAndPasswordError,
+  ] = useSignInWithEmailAndPassword(auth);
+
+  const [token] = useToken(signInWithEmailAndPasswordUser);
+
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  if (loading || sending||userLoading) return <Loading />;
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
+    }
+  }, [token, from, navigate]);
 
-  if (token) {
-    navigate(from, { replace: true });
-  }
+  useEffect(() => {
+    if (user) setIsSignedIn(true);
+    else setIsSignedIn(false);
+  }, user);
 
-  if (error) {
-    toast.error(error?.message);
+  if (loading || sending || signInWithEmailAndPasswordLoading)
+    return <Loading />;
+
+  if (signInWithEmailAndPasswordError) {
+    toast.error(signInWithEmailAndPasswordError?.message);
   }
 
   const handleSubmit = async (event) => {
@@ -55,9 +71,7 @@ const SignIn = () => {
     }
   };
 
-  if (signedInUser) {
-    return <Navigate to="/" state={{ from: location }} replace />;
-  }
+  if (isSignedIn) return <Navigate to="/" />;
 
   return (
     <section className="h-screen container mx-auto md:px-20 ">

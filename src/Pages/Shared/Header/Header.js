@@ -14,7 +14,10 @@ const Header = () => {
 
   const signInNavigate = () => navigate("/signin");
 
-  const handleSignOut = () => signOut(auth);
+  const handleSignOut = () => {
+    signOut(auth);
+    localStorage.removeItem("accessToken");
+  };
 
   return (
     <nav
