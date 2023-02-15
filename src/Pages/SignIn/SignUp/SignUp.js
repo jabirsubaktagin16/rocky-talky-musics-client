@@ -4,7 +4,7 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { toast } from "react-hot-toast";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
@@ -47,10 +47,6 @@ const SignUp = () => {
   if (loading || updating) return <Loading />;
 
   if (token) navigate("/");
-
-  if (localStorage.getItem("accessToken")) {
-    return <Navigate to="/" />;
-  }
 
   return (
     <>

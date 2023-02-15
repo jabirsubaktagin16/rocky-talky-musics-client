@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
+  useAuthState,
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { toast } from "react-hot-toast";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
@@ -14,9 +15,6 @@ import useToken from "./../../../hooks/useToken";
 import Loading from "./../../Shared/Loading/Loading";
 
 const SignIn = () => {
-  // const [user, loading] = useAuthState(auth);
-  // const [isSignedIn, setIsSignedIn] = useState(false);
-
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const [
@@ -40,14 +38,16 @@ const SignIn = () => {
     }
   }, [token, from, navigate]);
 
-  // useEffect(() => {
-  //   if (user) setIsSignedIn(true);
-  //   else {
-  //     setIsSignedIn(false);
-  //   }
-  // }, user);
+  const [signedInUser, userLoading, userError] = useAuthState(auth);
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
-  if (sending || signInWithEmailAndPasswordLoading) return <Loading />;
+  useEffect(() => {
+    if (signedInUser) setIsSignedIn(true);
+    else setIsSignedIn(false);
+  }, signedInUser);
+
+  if (sending || signInWithEmailAndPasswordLoading || userLoading)
+    return <Loading />;
 
   if (signInWithEmailAndPasswordError) {
     toast.error(signInWithEmailAndPasswordError?.message);
@@ -72,10 +72,6 @@ const SignIn = () => {
       toast("Please Enter Your Email Address");
     }
   };
-
-  if (localStorage.getItem("accessToken")) {
-    return <Navigate to="/" state={{ from: location }} replace />;
-  }
 
   return (
     <>
