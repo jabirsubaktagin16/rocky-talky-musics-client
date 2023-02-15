@@ -1,11 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import {
-  useAuthState,
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { toast } from "react-hot-toast";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
@@ -19,14 +18,6 @@ const SignUp = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const confirmPasswordRef = useRef("");
-
-  const [signedInUser, userLoading, userError] = useAuthState(auth);
-  const [isSignedIn, setIsSignedIn] = useState(false);
-
-  useEffect(() => {
-    if (signedInUser) setIsSignedIn(true);
-    else setIsSignedIn(false);
-  }, signedInUser);
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
@@ -51,22 +42,24 @@ const SignUp = () => {
     }
   };
 
-  const navigateLogin = (event) => navigate("/login");
+  const navigateLogin = (event) => navigate("/signin");
 
-  if (loading || updating || userLoading) return <Loading />;
+  if (loading || updating) return <Loading />;
 
   if (token) navigate("/");
 
-  if (isSignedIn) return <Navigate to="/" />;
+  if (localStorage.getItem("accessToken")) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <>
       <Header />
-      <section className="h-screen container mx-auto md:px-20 md:mb-20">
+      <section className="h-screen container mx-auto lg:px-20 md:mb-20">
         <PageTitle title={"Sign Up"} />
         <div className="container h-full">
           <div className="flex justify-center items-center flex-wrap h-full text-gray-800 ">
-            <div className="w-full md:w-5/12 bg-white px-8 py-20">
+            <div className="w-full lg:w-5/12 bg-white px-8 py-20">
               <h1 className="text-4xl uppercase text-center font-bold">
                 Sign Up Form
               </h1>
@@ -118,12 +111,12 @@ const SignUp = () => {
               <div className="flex justify-center mt-2">
                 <p>
                   Already Have an Account?{" "}
-                  <Link
-                    to="/signin"
+                  <button
+                    onClick={navigateLogin}
                     className="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out"
                   >
                     Sign In
-                  </Link>
+                  </button>
                 </p>
               </div>
             </div>

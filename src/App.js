@@ -54,8 +54,9 @@ function App() {
             </RequireAuth>
           }
         />
-        <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<SignIn />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />

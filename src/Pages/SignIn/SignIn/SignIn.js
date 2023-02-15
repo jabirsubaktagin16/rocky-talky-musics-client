@@ -1,11 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import {
-  useAuthState,
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { toast } from "react-hot-toast";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
@@ -15,8 +14,8 @@ import useToken from "./../../../hooks/useToken";
 import Loading from "./../../Shared/Loading/Loading";
 
 const SignIn = () => {
-  const [user, loading, error] = useAuthState(auth);
-  const [isSignedIn, setIsSignedIn] = useState(false);
+  // const [user, loading] = useAuthState(auth);
+  // const [isSignedIn, setIsSignedIn] = useState(false);
 
   const emailRef = useRef("");
   const passwordRef = useRef("");
@@ -41,13 +40,14 @@ const SignIn = () => {
     }
   }, [token, from, navigate]);
 
-  useEffect(() => {
-    if (user) setIsSignedIn(true);
-    else setIsSignedIn(false);
-  }, user);
+  // useEffect(() => {
+  //   if (user) setIsSignedIn(true);
+  //   else {
+  //     setIsSignedIn(false);
+  //   }
+  // }, user);
 
-  if (loading || sending || signInWithEmailAndPasswordLoading)
-    return <Loading />;
+  if (sending || signInWithEmailAndPasswordLoading) return <Loading />;
 
   if (signInWithEmailAndPasswordError) {
     toast.error(signInWithEmailAndPasswordError?.message);
@@ -73,7 +73,9 @@ const SignIn = () => {
     }
   };
 
-  if (isSignedIn) return <Navigate to="/" />;
+  if (localStorage.getItem("accessToken")) {
+    return <Navigate to="/" state={{ from: location }} replace />;
+  }
 
   return (
     <>
@@ -128,12 +130,12 @@ const SignIn = () => {
               <div className="flex justify-center mt-2">
                 <p>
                   Don't Have an Account?{" "}
-                  <Link
-                    to="/signup"
+                  <button
+                    onClick={navigateSignup}
                     className="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out"
                   >
                     Create an account
-                  </Link>
+                  </button>
                 </p>
               </div>
             </div>

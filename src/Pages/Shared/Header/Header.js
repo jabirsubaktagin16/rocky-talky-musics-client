@@ -17,6 +17,7 @@ const Header = () => {
   const handleSignOut = () => {
     signOut(auth);
     localStorage.removeItem("accessToken");
+    signInNavigate();
   };
 
   return (
@@ -24,7 +25,7 @@ const Header = () => {
       className="sticky top-0 bg-white w-full z-10 shadow-md flex flex-wrap items-center uppercase justify-between py-4 text-gray-500 hover:text-gray-700 focus:text-gray-700 navbar navbar-expand-lg navbar-light
 "
     >
-      <div className="md:container mx-auto w-full flex flex-wrap items-center justify-between md:px-20 px-6">
+      <div className="md:container mx-auto w-full flex flex-wrap items-center justify-between lg:px-20 px-6">
         <Link to="/">
           <img src={logo} style={{ height: "50px" }} alt="" loading="lazy" />
         </Link>
@@ -196,8 +197,7 @@ const Header = () => {
                         </li>
                         <hr className="h-0 my-2 border border-solid border-t-0 border-gray-700 opacity-25" />
                         <li>
-                          <Link
-                            to="/signin"
+                          <button
                             className="
               dropdown-item
               text-sm
@@ -214,7 +214,7 @@ const Header = () => {
                             onClick={handleSignOut}
                           >
                             Sign Out
-                          </Link>
+                          </button>
                         </li>
                       </ul>
                     </div>
