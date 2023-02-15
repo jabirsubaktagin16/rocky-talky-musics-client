@@ -5,6 +5,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { MdAddCircleOutline } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
+import Footer from "../Shared/Footer/Footer";
+import Header from "../Shared/Header/Header";
 import Loading from "../Shared/Loading/Loading";
 import PageTitle from "../Shared/PageTitle/PageTitle";
 import auth from "./../../firebase.init";
@@ -42,6 +44,7 @@ const MyItems = () => {
 
   return (
     <>
+      <Header />
       <PageTitle title={"My Items"} />
       {/* Banner Start */}
       <div
@@ -97,6 +100,7 @@ const MyItems = () => {
           </>
         )}
       </div>
+      <Footer />
     </>
   );
 };

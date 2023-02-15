@@ -1,11 +1,14 @@
 import React from "react";
 import question from "../../images/images/question.png";
+import Footer from "../Shared/Footer/Footer";
+import Header from "../Shared/Header/Header";
 import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const Blogs = () => {
   return (
     <div>
       <PageTitle title={"Blogs"} />
+      <Header />
       {/* Banner Start */}
       <div
         className="p-12 text-center relative overflow-hidden bg-no-repeat bg-cover"
@@ -401,6 +404,7 @@ const Blogs = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

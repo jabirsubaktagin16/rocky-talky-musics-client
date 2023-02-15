@@ -1,5 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import Footer from "../../Shared/Footer/Footer";
+import Header from "../../Shared/Header/Header";
 import useSupplierDetail from "./../../../hooks/useSupplierDetail";
 
 const SupplierDetails = () => {
@@ -7,6 +9,7 @@ const SupplierDetails = () => {
   const [supplier, setSupplier] = useSupplierDetail(id);
   return (
     <>
+      <Header />
       {/* Banner Start */}
       <div
         className="p-12 text-center relative overflow-hidden bg-no-repeat bg-cover"
@@ -47,6 +50,7 @@ const SupplierDetails = () => {
           <p className="font-normal text-lg">{supplier.description}</p>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

@@ -7,8 +7,6 @@ import Inventory from "./Pages/Inventory/Inventory";
 import AddNewItem from "./Pages/ManageInventory/AddNewItem/AddNewItem";
 import ManageInventory from "./Pages/ManageInventory/ManageInventory/ManageInventory";
 import MyItems from "./Pages/MyItems/MyItems";
-import Footer from "./Pages/Shared/Footer/Footer";
-import Header from "./Pages/Shared/Header/Header";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import RequireAuth from "./Pages/SignIn/RequireAuth/RequireAuth";
 import SignIn from "./Pages/SignIn/SignIn/SignIn";
@@ -19,7 +17,6 @@ import Suppliers from "./Pages/Suppliers/Suppliers/Suppliers";
 function App() {
   return (
     <div className="App">
-      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/suppliers" element={<Suppliers />} />
@@ -61,7 +58,6 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
       <Toaster />
     </div>
   );

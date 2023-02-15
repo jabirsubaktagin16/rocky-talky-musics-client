@@ -1,6 +1,8 @@
 import React from "react";
 import { MdAddCircleOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Footer from "../../Shared/Footer/Footer";
+import Header from "../../Shared/Header/Header";
 import Loading from "../../Shared/Loading/Loading";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
 import useProducts from "./../../../hooks/useProducts";
@@ -30,6 +32,7 @@ const ManageInventory = () => {
     <>
       <PageTitle title={"Manage Inventories"} />
       {/* Banner Start */}
+      <Header />
       <div
         className="p-12 text-center relative overflow-hidden bg-no-repeat bg-cover"
         style={{
@@ -70,6 +73,7 @@ const ManageInventory = () => {
           />
         ))}
       </div>
+      <Footer />
     </>
   );
 };

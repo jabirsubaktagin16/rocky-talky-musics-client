@@ -1,4 +1,6 @@
 import React from "react";
+import Footer from "../../Shared/Footer/Footer";
+import Header from "../../Shared/Header/Header";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
 import Supplier from "../Supplier/Supplier";
 import useSuppliers from "./../../../hooks/useSuppliers";
@@ -8,6 +10,7 @@ const Suppliers = () => {
   return (
     <>
       <PageTitle title={""} />
+      <Header />
       {/* Banner Start */}
       <div
         className="p-12 text-center relative overflow-hidden bg-no-repeat bg-cover"
@@ -36,6 +39,7 @@ const Suppliers = () => {
           <Supplier supplier={supplier} key={supplier._id} />
         ))}
       </div>
+      <Footer />
     </>
   );
 };
